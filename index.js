@@ -1,9 +1,9 @@
 import * as util from './src/util.js';
 import * as keys from './src/keycodes.js';
 import * as fmt from './src/formatting.js';
-import { runCommand, printHelp, parseCommand } from './src/command.js';
+import { runCommand, parseCommand } from './src/command.js';
 
-var t = new Terminal({cols: 120});
+var t = new Terminal({cols: 200, rows: 200});
 var current_line = "";
 var past_inputs = [];
 

@@ -1,12 +1,14 @@
-import { hello } from './commands/hello.js';
 import { clear } from './commands/clear.js';
-import { tux } from './commands/tux.js';
+import { portrait } from './commands/portrait.js';
+import { about } from './commands/about.js';
 
 const COMMANDS = [
-    {"name": "help", "fn": printHelp, "description": "List all available commands"},    
-    hello,
-    clear,
-    tux
+    {"name": "help", "fn": printHelp, "description": "List all available commands"}, 
+    {"name": "", "description": ""},  // Spacer  
+    portrait,
+    about,
+    {"name": "", "description": ""},  // Spacer   
+    clear 
 ];
 
 export function runCommand(command, args, terminal) {
