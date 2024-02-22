@@ -1,10 +1,12 @@
 import { hello } from './commands/hello.js';
 import { clear } from './commands/clear.js';
+import { tux } from './commands/tux.js';
 
 const COMMANDS = [
     {"name": "help", "fn": printHelp, "description": "List all available commands"},    
     hello,
     clear,
+    tux
 ];
 
 export function runCommand(command, args, terminal) {
@@ -16,7 +18,7 @@ export function runCommand(command, args, terminal) {
         }
     }
 
-    terminal.write(`Unknown command: ${command}`);
+    terminal.writeln(`Unknown command: ${command}`);
 }
 
 export function printHelp(args, terminal) {
@@ -28,6 +30,10 @@ export function printHelp(args, terminal) {
 }
 
 export function parseCommand(input, terminal) {
+    if (input.length == 0) {
+        console.log(`Empty input ${input}`);
+        return;
+    }
     let tokens = input.split(" ").filter(token => token != '');
     return {"name": tokens[0], "args": tokens.slice(1)};
 }

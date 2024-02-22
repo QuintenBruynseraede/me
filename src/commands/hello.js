@@ -1,5 +1,5 @@
 function sayHello(args, terminal) {
-    console.log("Hello")
+    terminal.writeln("Hello World!");
 }
 
 export const hello = {"name": "hello", "fn": sayHello, "description": "Says hello"};

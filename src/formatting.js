@@ -4,5 +4,5 @@ export function red(text) {
 }
 
 export function newInputLine() {
-    return '\n\r$ ';
+    return '$ ';
 }

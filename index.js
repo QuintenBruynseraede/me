@@ -10,15 +10,15 @@ var past_inputs = [];
 function handleKeyStroke(e) {
     // Enter
     if (e.key == keys.RETURN) {
-        console.log(`Input: ${current_line}`);
         t.write('\n\r');
 
         let cmd = parseCommand(current_line, t);
+        if (cmd !== undefined) {
+            runCommand(cmd.name, cmd.args, t);
+        }
 
         past_inputs.push(current_line);
-        current_line = '';
-
-        runCommand(cmd.name, cmd.args, t);
+        current_line = ''; 
 
         t.write(fmt.newInputLine());
     } else if (e.key == keys.EOT) {
