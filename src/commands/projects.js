@@ -9,7 +9,7 @@ function printProjects(args, terminal) {
       `team of junior and senior engineers towards the delivery and maintenance of a`,
       `platform on AWS. We offer a wide range of data processing and Machine Learning`,
       `capabilities towards Telenet's data experts.`,
-      `${fmt.bold("Technologies:")}: AWS (EKS, EMR, Sagemaker, Batch, ...), Terraform, Snowflake, Python`,
+      `${fmt.bold("Technologies:")} AWS (EKS, EMR, Sagemaker, Batch, ...), Terraform, Snowflake, Python`,
       ``,
       fmt.bold(`${fmt.blue("Cloud Engineer")} - KBC (via dataroots)`),
       fmt.italic("Sep 2022 - Dec 2023"),
