@@ -1,12 +1,14 @@
 import { clear } from './commands/clear.js';
 import { portrait } from './commands/portrait.js';
 import { about } from './commands/about.js';
+import { projects } from './commands/projects.js';
 
 const COMMANDS = [
     {"name": "help", "fn": printHelp, "description": "List all available commands"}, 
     {"name": "", "description": ""},  // Spacer  
     portrait,
     about,
+    projects,
     {"name": "", "description": ""},  // Spacer   
     clear 
 ];
