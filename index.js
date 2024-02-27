@@ -6,9 +6,11 @@ import { runCommand, parseCommand } from './src/command.js';
 var t = new Terminal({cols: 200, rows: 200});
 var current_line = "";
 var past_inputs = [];
+var past_inputs_scroll_idx = undefined;
 
 function handleKeyStroke(e) {
     // Enter
+    console.log(e.key);
     if (e.key == keys.RETURN) {
         t.write('\n\r');
 
@@ -16,23 +18,44 @@ function handleKeyStroke(e) {
         if (cmd !== undefined) {
             runCommand(cmd.name, cmd.args, t);
         }
-
-        past_inputs.push(current_line);
-        current_line = ''; 
-
+        
+        if (current_line.trim().length > 0)
+            past_inputs.push(current_line.trim());
+    
+        past_inputs_scroll_idx = undefined;
+        current_line = '';
         t.write(fmt.newInputLine());
     } else if (e.key == keys.EOT) {
         // Ctrl+C
-        t.write(' Aborted.');
+        t.write(' Aborted.\n\r');
         current_line = '';
         t.write(fmt.newInputLine());
+        past_inputs_scroll_idx = undefined;
+    } else if (e.key == keys.ARROW_UP) {
+        console.log("Arrow up");
+        if (past_inputs.length > 0) {
+            if (past_inputs_scroll_idx == 0 || past_inputs_scroll_idx === undefined)
+                past_inputs_scroll_idx = past_inputs.length - 1;
+            else
+                past_inputs_scroll_idx -= 1;
+        }
+
+        _loadPreviousInput(past_inputs_scroll_idx);
+    } else if (e.key == keys.ARROW_DOWN) { 
+        if (past_inputs_scroll_idx === undefined)
+            past_inputs_scroll_idx = 0;
+        else 
+            past_inputs_scroll_idx = (past_inputs_scroll_idx + 1) % past_inputs.length;
+
+        _loadPreviousInput(past_inputs_scroll_idx);
     } else if (e.key == keys.BACKSPACE && current_line.length > 0) {
         // Backspace
-        current_line = current_line.slice(0, -1);
         t.write('\b \b');
+        current_line = current_line.slice(0, -1);
     } else if (util.isValidInputCharacter(e.key)) {
         current_line += e.key;
         t.write(e.key);
+        past_inputs_scroll_idx = undefined;
     }
 }
 
@@ -44,4 +67,10 @@ function initializeTerminal() {
     t.write(fmt.newInputLine());
 }
 
+
+function _loadPreviousInput(idx) {
+    current_line = past_inputs[idx];
+    t.write('\x1b[2K\r')  // clear line
+    t.write(`${fmt.newInputLine()}${current_line}`);
+}
 initializeTerminal();
