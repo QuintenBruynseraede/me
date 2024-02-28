@@ -2,6 +2,7 @@ import { clear } from './commands/clear.js';
 import { portrait } from './commands/portrait.js';
 import { about } from './commands/about.js';
 import { projects } from './commands/projects.js';
+import { skills } from './commands/skills.js';
 
 const COMMANDS = [
     {"name": "help", "fn": printHelp, "description": "List all available commands"}, 
@@ -9,6 +10,7 @@ const COMMANDS = [
     portrait,
     about,
     projects,
+    skills,
     {"name": "", "description": ""},  // Spacer   
     clear 
 ];

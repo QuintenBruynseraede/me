@@ -10,7 +10,7 @@ function printAbout(args, terminal) {
         "👶  Date of birth: 13/9/1998 (25 years old)",
         "🧭  Location:      Leuven, Belgium",
         "⚽  Hobbies:       football, cycling, science fiction novels, programming",
-        "🧠  Interests:     Python, golang, Terraform, Devops, AWS",
+        "🧠  Interests:     Linux, Python, golang, Terraform, Devops, AWS, neovim",
         "",
         "Find me on these platforms:",
         `Github:   ${fmt.cyan("https://github.com/QuintenBruynseraede")}`,
