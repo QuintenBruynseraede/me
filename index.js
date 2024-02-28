@@ -10,7 +10,6 @@ var past_inputs_scroll_idx = undefined;
 
 function handleKeyStroke(e) {
     // Enter
-    console.log(e.key);
     if (e.key == keys.RETURN) {
         t.write('\n\r');
 

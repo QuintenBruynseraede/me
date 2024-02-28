@@ -49,6 +49,5 @@ export function surround(lines, padding) {
         output.push(formatted);
     }
     output.push(last_line);
-    console.log(output);
     return output.join("\n\r");
 }

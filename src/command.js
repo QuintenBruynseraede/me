@@ -18,7 +18,6 @@ const COMMANDS = [
 export function runCommand(command, args, terminal) {
     for (let i = 0; i < COMMANDS.length; i++) {
         if (COMMANDS[i].name == command) {
-            console.log(`Trigger: ${COMMANDS[i]}`);
             COMMANDS[i].fn(args, terminal);
             return;
         }
@@ -37,7 +36,6 @@ export function printHelp(args, terminal) {
 
 export function parseCommand(input, terminal) {
     if (input.length == 0) {
-        console.log(`Empty input ${input}`);
         return;
     }
     let tokens = input.split(" ").filter(token => token != '');
