@@ -32,7 +32,8 @@ function handleKeyStroke(e) {
         t.write(fmt.newInputLine());
         past_inputs_scroll_idx = undefined;
     } else if (e.key == keys.ARROW_UP) {
-        console.log("Arrow up");
+        if (past_inputs.length == 0) return;
+
         if (past_inputs.length > 0) {
             if (past_inputs_scroll_idx == 0 || past_inputs_scroll_idx === undefined)
                 past_inputs_scroll_idx = past_inputs.length - 1;
@@ -41,7 +42,9 @@ function handleKeyStroke(e) {
         }
 
         _loadPreviousInput(past_inputs_scroll_idx);
-    } else if (e.key == keys.ARROW_DOWN) { 
+    } else if (e.key == keys.ARROW_DOWN) {
+        if (past_inputs.length == 0) return;
+
         if (past_inputs_scroll_idx === undefined)
             past_inputs_scroll_idx = 0;
         else 
