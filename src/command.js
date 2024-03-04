@@ -4,6 +4,8 @@ import { about } from './commands/about.js';
 import { projects } from './commands/projects.js';
 import { skills } from './commands/skills.js';
 
+import * as fmt from './formatting.js';
+
 const COMMANDS = [
     {"name": "help", "fn": printHelp, "description": "List all available commands"}, 
     {"name": "", "description": ""},  // Spacer  
@@ -27,11 +29,17 @@ export function runCommand(command, args, terminal) {
 }
 
 export function printHelp(args, terminal) {
-    terminal.write("List of available commands: \n\r");
+    let helpText = [
+        fmt.bold(`${fmt.blue("List of available commands: ")}`),
+        "",
+    ];
+
     for (let i = 0; i < COMMANDS.length; i++) {
         let cmd = COMMANDS[i];
-        terminal.write(`${cmd.name}${" ".repeat(10-cmd.name.length)}${cmd.description}\n\r`);
+        helpText.push(`${cmd.name}${" ".repeat(10-cmd.name.length)}${cmd.description}`);
     } 
+
+    terminal.writeln(fmt.surround(helpText, [17]));
 }
 
 export function parseCommand(input, terminal) {
