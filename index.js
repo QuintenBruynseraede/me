@@ -3,7 +3,7 @@ import * as keys from './src/keycodes.js';
 import * as fmt from './src/formatting.js';
 import { runCommand, parseCommand } from './src/command.js';
 
-var t = new Terminal({cols: 200, rows: 200});
+var t = new Terminal();
 var current_line = "";
 var past_inputs = [];
 var past_inputs_scroll_idx = undefined;
@@ -62,8 +62,12 @@ function handleKeyStroke(e) {
 }
 
 function initializeTerminal() {
-    t.open(document.getElementById('terminal'));
+    const fitAddon = new FitAddon.FitAddon();
+
     t.loadAddon(new WebLinksAddon.WebLinksAddon());
+    t.loadAddon(fitAddon);
+    t.open(document.getElementById('terminal'));
+    fitAddon.fit();
     
     t.onKey(handleKeyStroke);
    
