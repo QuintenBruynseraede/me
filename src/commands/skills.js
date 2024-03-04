@@ -12,23 +12,24 @@ function printSkills(args, terminal) {
         `Airflow     ☆☆☆☆☆`,
         ``,
         `${fmt.blue(fmt.bold("Things I know how to do"))}`,
-        `Grafana     ☆☆☆☆`,
-        `Dagster     ☆☆☆☆`,
-        `Golang      ☆☆☆☆`,
-        `SQL         ☆☆☆☆`,
-        `pyspark     ☆☆☆☆`,
-        `Linux       ☆☆☆☆`,
-        `Atlassian   ☆☆☆☆`,
-        `Javascript  ☆☆☆☆`,
+        `Grafana          ☆☆☆☆`,
+        `Dagster          ☆☆☆☆`,
+        `Golang           ☆☆☆☆`,
+        `SQL              ☆☆☆☆`,
+        `pyspark          ☆☆☆☆`,
+        `Shell scripting  ☆☆☆☆`,
+        `Atlassian        ☆☆☆☆`,
+        `Javascript       ☆☆☆☆`,
         ``,
         `${fmt.blue(fmt.bold("Things I know a bit"))}`,
         `Snowflake   ☆☆☆`,
         `C++         ☆☆☆`,
         `Java        ☆☆☆`,
+        `Rust        ☆☆☆`,
         `dbt         ☆☆☆`,
         ``,
         `${fmt.italic("Note: this is self-evaluated and based on... nothing")}`,
-     ],[17,0,0,0,0,0,0,17,0,0,0,0,0,0,0,0,0,17,0,0,0,0,0,8]))
+     ],[17,0,0,0,0,0,0,17,0,0,0,0,0,0,0,0,0,17,0,0,0,0,0,0,8]))
 }
 
-export const skills = {"name": "skills", "fn": printSkills, "description": "Lean what I'm good at"};
+export const skills = {"name": "skills", "fn": printSkills, "description": "Learn what I'm good at"};
