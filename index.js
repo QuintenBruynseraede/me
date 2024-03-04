@@ -71,7 +71,7 @@ function initializeTerminal() {
     
     t.onKey(handleKeyStroke);
    
-    t.write(`Welcome to my interactive ${fmt.red('Terminal!')}\n\r`);
+    t.write(`Welcome to my interactive ${fmt.bold(fmt.blue('Terminal!'))}\n\r`);
     t.write(`Use 'help' to see all available commands\n\r`); 
     t.write(fmt.newInputLine());
 }
