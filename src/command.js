@@ -3,6 +3,7 @@ import { portrait } from './commands/portrait.js';
 import { about } from './commands/about.js';
 import { projects } from './commands/projects.js';
 import { skills } from './commands/skills.js';
+import { talks } from './commands/talks.js';
 
 import * as fmt from './formatting.js';
 
@@ -13,6 +14,7 @@ const COMMANDS = [
     about,
     projects,
     skills,
+    talks,
     {"name": "", "description": ""},  // Spacer   
     clear 
 ];
