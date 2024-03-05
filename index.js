@@ -3,7 +3,10 @@ import * as keys from './src/keycodes.js';
 import * as fmt from './src/formatting.js';
 import { runCommand, parseCommand } from './src/command.js';
 
-var t = new Terminal();
+var t = new Terminal({
+    "cursorBlink": true,
+    "fontSize": 16,
+});
 var current_line = "";
 var past_inputs = [];
 var past_inputs_scroll_idx = undefined;
