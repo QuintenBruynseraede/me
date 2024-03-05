@@ -14,7 +14,9 @@ function printAbout(args, terminal) {
         "",
         "Find me on these platforms:",
         `Github:   ${fmt.cyan("https://github.com/QuintenBruynseraede")}`,
-        `LinkedIn: ${fmt.cyan("https://www.linkedin.com/in/quinten-bruynseraede-57289515b/")}`
-    ], [1, 9, 0, 1, 1, 0, 1, 0, 0, 9, 9]));
+        `LinkedIn: ${fmt.cyan("https://www.linkedin.com/in/quinten-bruynseraede-57289515b/")}`,
+        ``,
+        `Email: FIRSTNAME.LASTNAME@hotmail.com or FIRSTNAME@dataroots.io`,
+    ], [1, 9, 0, 1, 1, 0, 1, 0, 0, 9, 9, 0, 0]));
 }
 
