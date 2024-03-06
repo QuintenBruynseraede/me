@@ -1,7 +1,7 @@
 # About me
 
 I have a soft spot for Linux. This project is an attempt to present myself in an original way.
-Try it out at [https://quintenbruynseraede.github.io/me](https://quintenbruynseraede.github.io/me).
+Try it out at [https://quintenbruynseraede.github.io](https://quintenbruynseraede.github.io).
 
 I might implement the following at some point:
 - An in-memory file system
